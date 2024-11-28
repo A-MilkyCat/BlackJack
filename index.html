@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="Game">
+    <canvas id="myCanvas"></canvas>
+    <div id="outputResult" class="outputResult-win">
+        <button onclick="startGame()" id="GameOrDeal" class="GameOrDeal">New Game!</button>
+    </div>
+    <div class="options">
+        <div id="inGame">
+            <img src="./img/Hit.png" onclick="playerHit()" alt="Image" class="hover-image">
+            <img src="./img/Stand.png" onclick="playerStand()" alt="Image" class="hover-image">
+            <img src="./img/Signal.png" onclick="toggleSignal()" alt="Image" class="hover-image">
+        </div>
+        <div id="chip">
+            <img src="./img/10chip.png" onclick="placeBet(0)" alt="Image" class="hover-image" id="chip1">
+            <img src="./img/25chip.png" onclick="placeBet(1)" alt="Image" class="hover-image" id="chip2">
+            <img src="./img/100chip.png" onclick="placeBet(2)" alt="Image" class="hover-image" id="chip3">
+            <img src="./img/ALLIN.png"  alt="Image" class="hover-image" id="ALLIN">
+        </div>
+    </div>
+    <!-- <table id="gameHistory">
+        <tr>
+            <th>Game #</th>
+            <th>Result</th>
+            <th>Player Score</th>
+            <th>Dealer Score</th>
+            <th>Bet</th>
+            <th>Saving</th>
+        </tr>
+    </table>
+    <img src="./img/dot.png"  id ="historyImage" onclick="toggleHistory()"> -->
+    <img src="./img/reset.png" onclick="clearGameHistory()" id="resetBtn">
+</div>
+
+
+<script src="script.js"></script>
+<script src="gameLogic.js"></script>
+</body>
+</html>
