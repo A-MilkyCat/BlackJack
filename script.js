@@ -61,6 +61,8 @@ chipImages.push(new Image());
 chipImages[3].src = `./img/${bottomChip01[1][2].path}.png`;
 /////////////////////// resize
 function resizeCanvas() {
+    // TODO  
+    // change the dealed card, bet, deck position when size changed
     if (canvas.clientHeight < canvas.clientWidth){
         canvas.width = 1920;
         canvas.height = 911;
@@ -120,11 +122,12 @@ function updateConstant(w, h){
         savingImgX = w_10 ;
         placeBetX = w_10 * 3;
         fontSize = w / 30;
-        cardSizeY = h_10 * 2;
-        cardSizeX = w_10 * 1.2;
+        dealerCardY = h_10 * 1.5;
+        cardSizeX = w_10 * 1.6;
+        cardSizeY = cardSizeX * 3 / 2;
         deckPosition = { x: -1 * w_10 * 2, y: h_10 * 1.2 };
         firstCardX = w_10 * 1;
-        cardIntervalX = w_10 / 2;
+        cardIntervalX = w_10 / 20;
     }
     bottomChip01 = [
         [{path:"10chip", x: chipX, y:chipY, money: 10, idx:0},
@@ -454,7 +457,6 @@ function animateFlip(oner, cardIndex) {
         const cardKey = `${card.value}${card.suit}`;
         context.drawImage(card.isFaceUp ? cardsImage[cardKey] : deckImage, card.x, card.y, cardSizeX, cardSizeY);
         context.restore();
-
         angle += Math.PI / 20; 
         if (angle >= Math.PI) { 
             clearInterval(flipInterval);
